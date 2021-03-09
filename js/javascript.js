@@ -8,9 +8,32 @@ function ganador() {
     let edad2 = document.getElementById('edad2').value
     let tiempo2 = document.getElementById('tiempo2').value
 
-    if (corredor1 === "" ||  edad1 === "" || tiempo1 === "" || corredor2 === "" ||  edad2 === "" || tiempo2 === ""){
+    if ((parseInt(corredor1) === "" || edad1 === "" || tiempo1 === "" || (parseInt(corredor2) === "" ||  edad2 === "" || tiempo2 === ""){
         swal("Diligencia todos los campos")
     }
+    else if(tiempo2<tiempo1){
+        swal({
+            title: "Ganador el Corredor2"
+            text: `Corredor: ${corredor2} Edad: ${edad2} Tiempo: ${tiempo2}`,
+            icon: "Succes",
+        });
+        
+    }    
 
+    else if(tiempo2>tiempo1){
+            swal({
+                title: "Ganador el Corredor2"
+                text: `Corredor: ${corredor1} Edad: ${edad1} Tiempo: ${tiempo1}`,
+                icon: "Succes",
+            });
+    }
+
+    else if(tiempo1===tiempo2){
+        swal({
+            title: "Es empate",
+            text: "¡Felicitaciones",
+            icon: "Succes",
+        });
+    }    
    
 }
